@@ -118,9 +118,7 @@ export function InvitationReveal() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <p className="mt-3.5 font-display text-xl font-semibold tracking-wide text-[#0b2419] sm:mt-4 sm:text-2xl">
-              {wedding.date || '12 DEC 2026'}
-            </p>
+           
           </Reveal>
 
           <Reveal delay={0.28}>
