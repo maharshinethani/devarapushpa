@@ -275,10 +275,10 @@ export function DoorScene({ onEntered, music }: Props) {
 
                 {/* Script Family Title */}
                 <div className="script mt-3 font-script text-4xl leading-none text-gold-soft drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-[42px]">
-                  Devara&apos;s
+                  Akramani&apos;s
                 </div>
                  <div className="fam font-display text-xs tracking-[0.03em] text-cream/95 sm:text-[13px]">
-                  Sri Devara Chinnarao, Smt.Srinamma
+                  Sri Akramani Pydiraju, Smt.Narasayyamma
                 </div>
 
                 {/* Spaced Uppercase Subheading */}
