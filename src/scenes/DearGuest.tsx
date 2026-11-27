@@ -88,6 +88,37 @@ export function DearGuest() {
           </div>
         </Reveal>
       </div>
+
+      {/* Website Credit Footer */}
+      <div className="absolute bottom-4 left-0 right-0 z-20 px-4 text-center sm:bottom-5">
+        <div className="mx-auto flex flex-col items-center justify-center gap-1">
+          <p className="font-body text-[9px] uppercase tracking-[0.22em] text-cream/50 sm:text-[10px]">
+            Website crafted by
+          </p>
+
+         
+
+          <div className="mt-0.5 flex items-center gap-2 text-[9px] text-cream/40 sm:text-[10px]">
+            <a
+              href="https://rcmverse.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-cream/70"
+            >
+              rcmverse.netlify.app
+            </a>
+
+            <span className="text-gold-soft/40">•</span>
+
+            <a
+              href="tel:+918500708626"
+              className="transition-colors hover:text-cream/70"
+            >
+              +91 85007 08626
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
