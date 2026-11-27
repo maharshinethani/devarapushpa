@@ -89,36 +89,41 @@ export function DearGuest() {
         </Reveal>
       </div>
 
-      {/* Website Credit Footer */}
-      <div className="absolute bottom-4 left-0 right-0 z-20 px-4 text-center sm:bottom-5">
-        <div className="mx-auto flex flex-col items-center justify-center gap-1">
-          <p className="font-body text-[9px] uppercase tracking-[0.22em] text-cream/50 sm:text-[10px]">
-            Website crafted by
+      {/* ================= WEBSITE CREDIT FOOTER ================= */}
+      <div className="absolute bottom-3 left-0 right-0 z-20 px-4 text-center sm:bottom-5">
+        <div className="mx-auto inline-flex flex-col items-center rounded-2xl border border-gold-soft/25 bg-royal-darkest/55 px-5 py-3 shadow-lg backdrop-blur-sm sm:px-7 sm:py-3.5">
+
+          <p className="font-body text-[9px] font-medium uppercase tracking-[0.25em] text-cream/65 sm:text-[10px]">
+            Website Crafted By
           </p>
 
-         
+          <p className="mt-1 font-display text-sm font-semibold tracking-[0.12em] text-gold-soft sm:text-base">
+            RCM DIGITAL SOLUTIONS
+          </p>
 
-          <div className="mt-0.5 flex items-center gap-2 text-[9px] text-cream/40 sm:text-[10px]">
+          <div className="mt-1.5 flex items-center gap-2 text-[10px] text-cream/65 sm:text-[11px]">
             <a
               href="https://rcmverse.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-cream/70"
+              className="transition-colors hover:text-gold-soft"
             >
               rcmverse.netlify.app
             </a>
 
-            <span className="text-gold-soft/40">•</span>
+            <span className="text-gold-soft/60">•</span>
 
             <a
               href="tel:+918500708626"
-              className="transition-colors hover:text-cream/70"
+              className="transition-colors hover:text-gold-soft"
             >
               +91 85007 08626
             </a>
           </div>
+
         </div>
       </div>
+      {/* ======================================================= */}
     </section>
   );
 }
