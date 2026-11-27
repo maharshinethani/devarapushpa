@@ -59,7 +59,7 @@ export function WeddingAlbum() {
         {/* Header Block */}
         <Reveal className="px-6 text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-[#8A5A44]">
-            Pushpa &amp; Srikanth · 2026
+            Srikanth &amp; Pushpa · 2026
           </p>
 
           <h2 className="mt-2 font-serif text-4xl font-normal tracking-wide text-[#1A2420] sm:text-6xl">
@@ -118,9 +118,9 @@ export function WeddingAlbum() {
               >
                 {/* Top Monogram & Year Header */}
                 <div className="mb-2 flex items-center justify-between border-b border-[#EFE4DC] pb-1.5 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#6D625C]">
-                  <span>Pushpa &amp; Srikanth</span>
+                  <span>Srikanth &amp; Pushpa</span>
                   <span className="rounded-full border border-[#D4B46A]/70 bg-[#FBF4E2] px-2 py-0.5 font-serif text-[10px] font-bold tracking-widest text-[#8A6824]">
-                    P &amp; S
+                    S &amp; P
                   </span>
                   <span>2026</span>
                 </div>
@@ -265,7 +265,7 @@ function Lightbox({
             <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6B665B]">
               <span>Memory {String(index + 1).padStart(2, '0')}</span>
               <span className="font-serif text-xs font-bold text-[#8A6824]">
-                P &amp; S
+                S &amp; P
               </span>
               <span>
                 {index + 1} / {n}
