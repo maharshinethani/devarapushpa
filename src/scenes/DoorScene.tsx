@@ -29,6 +29,75 @@ const DOOR_BOUNDS = {
   heightPct: 69,
 };
 
+function GoldWaveDivider({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      className={`h-[16px] w-[220px] max-w-full ${className}`}
+      viewBox="0 0 240 18"
+      fill="none"
+      aria-hidden="true"
+    >
+      <line
+        x1="8"
+        y1="11"
+        x2="88"
+        y2="11"
+        stroke="#c6a15b"
+        strokeWidth="1"
+        strokeOpacity="0.85"
+      />
+      <path
+        d="M88 11C96 3 106 3 114 11C122 18 132 18 140 11"
+        stroke="#c6a15b"
+        strokeWidth="1.1"
+      />
+      <circle cx="144" cy="11" r="2.2" fill="#c6a15b" />
+      <line
+        x1="148"
+        y1="11"
+        x2="232"
+        y2="11"
+        stroke="#c6a15b"
+        strokeWidth="1"
+        strokeOpacity="0.85"
+      />
+    </svg>
+  );
+}
+
+function GaneshaLineArt({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      className={`h-[56px] w-[52px] ${className}`}
+      viewBox="0 0 64 68"
+      fill="none"
+      stroke="#c6a15b"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {/* Ears */}
+      <path d="M20 20c-6-5-12-1-10 6 1 4 5 5 9 4" />
+      <path d="M44 20c6-5 12-1 10 6-1 4-5 5-9 4" />
+      {/* Crown / Tilak */}
+      <path d="M32 7l-3 5h6l-3-5z" />
+      <path d="M32 14v5" />
+      {/* Head */}
+      <circle cx="32" cy="24" r="9" />
+      {/* Eyes */}
+      <circle cx="28.5" cy="23" r="1" fill="#c6a15b" stroke="none" />
+      <circle cx="35.5" cy="23" r="1" fill="#c6a15b" stroke="none" />
+      {/* Trunk */}
+      <path d="M32 27c0 6 2 10 6 10 2.5 0 4-1.5 4-3.5" />
+      {/* Torso & Arms */}
+      <path d="M21 56v-9c0-5 4.5-8 11-8s11 3 11 8v9" />
+      <path d="M21 44l-5 8" />
+      <path d="M43 44l5 8" />
+    </svg>
+  );
+}
+
 export function DoorScene({ onEntered, music }: Props) {
   const reduced = useReducedMotion();
   const [stage, setStage] = useState<'idle' | 'entering'>('idle');
@@ -180,7 +249,7 @@ export function DoorScene({ onEntered, music }: Props) {
         </motion.div>
 
         {/* 4. Text & Button Overlay */}
-        <div className="pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col items-center justify-center px-6 text-center">
+        <div className="pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col items-center justify-center px-5 text-center">
           <AnimatePresence>
             {!isEntering && (
               <motion.div
@@ -194,40 +263,49 @@ export function DoorScene({ onEntered, music }: Props) {
                   transition: { duration: 0.45, ease: 'easeOut' },
                 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
-                className="pointer-events-auto flex flex-col items-center rounded-2xl border border-gold/35 bg-black/45 px-5 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] backdrop-blur-[3px] sm:px-8 sm:py-8"
+                className="pointer-events-auto flex w-full max-w-[360px] flex-col items-center rounded-xl border border-gold/45 bg-black/55 px-5 py-5 shadow-[0_14px_45px_rgba(0,0,0,0.78)] backdrop-blur-[4px] sm:max-w-[390px] sm:px-7 sm:py-6"
               >
-              
-                <p className="label-caps mt-2 text-[10px] tracking-[0.22em] text-cream/85 sm:text-xs">
-                  With all our hearts
-                </p>
+                {/* Top Ornamental Divider */}
+               
 
-                <h1 className="mt-3 font-script text-4xl leading-tight text-cream drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
-                  {weddingConfig.bride.scriptName}
-                </h1>
-                <span className="my-0.5 font-display text-xl italic text-gold-soft sm:text-2xl">
-                  &amp;
-                </span>
-                <h1 className="font-script text-4xl leading-tight text-cream drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
-                  {weddingConfig.groom.scriptName}
-                </h1>
+                {/* Shloka Stack */}
+                <div className="shloka mt-2 font-display text-base leading-[1.55] tracking-[0.04em] text-cream sm:text-lg">
+  శ్రీ గణేశాయ నమః
+</div>
 
-                <p className="label-caps mt-3 text-[10px] leading-relaxed tracking-[0.2em] text-cream/90 sm:mt-4 sm:text-xs">
-                  You are invited
-                  <br />
-                  to celebrate our wedding
-                </p>
+                {/* Script Family Title */}
+                <div className="script mt-3 font-script text-4xl leading-none text-gold-soft drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-[42px]">
+                  Devara&apos;s
+                </div>
+                 <div className="fam font-display text-xs tracking-[0.03em] text-cream/95 sm:text-[13px]">
+                  Sri Devara Chinnarao, Smt.Srinamma
+                </div>
 
+                {/* Spaced Uppercase Subheading */}
+                <div className="wi label-caps mt-2 text-[10px] font-normal tracking-[0.34em] text-cream/85 sm:text-[11px]">
+                  WEDDING INVITATION
+                </div>
+
+                {/* Couple Names */}
+               
+
+                {/* Small Emblem Separator */}
+             
+
+                {/* Family Hosts Line */}
+               
+
+             
+
+                {/* Action Button */}
                 <button
                   onClick={openInvitation}
-                  className="group mt-5 rounded-sm border border-gold/80 bg-royal-emerald/85 px-6 py-2.5 shadow-[0_0_20px_rgba(198,161,91,0.3)] transition-all duration-500 hover:scale-[1.03] hover:border-gold hover:bg-royal-emerald active:scale-[0.98] sm:mt-6 sm:px-8 sm:py-3"
+                  className="group mt-3.5 rounded-sm border border-gold/80 bg-royal-emerald/85 px-6 py-2 shadow-[0_0_20px_rgba(198,161,91,0.28)] transition-all duration-500 hover:scale-[1.03] hover:border-gold hover:bg-royal-emerald active:scale-[0.98]"
                 >
-                  <span className="label-caps flex items-center gap-2.5 text-xs tracking-[0.22em] text-gold-soft sm:text-sm">
-                    <span className="inline-block h-[1px] w-5 bg-gold/80 transition-all duration-500 group-hover:w-8" />
-                    Open Invitation
-                    <span className="inline-block h-[1px] w-5 bg-gold/80 transition-all duration-500 group-hover:w-8" />
-                  </span>
-                  <span className="mt-1 block text-[9px] font-light uppercase tracking-[0.25em] text-cream/75">
-                    Tap to open the doors
+                  <span className="label-caps flex items-center gap-2 text-[11px] tracking-[0.26em] text-gold-soft sm:text-xs">
+                    <span className="inline-block h-[1px] w-4 bg-gold/80 transition-all duration-500 group-hover:w-7" />
+                    TAP TO OPEN
+                    <span className="inline-block h-[1px] w-4 bg-gold/80 transition-all duration-500 group-hover:w-7" />
                   </span>
                 </button>
               </motion.div>
