@@ -12,16 +12,16 @@ export function DearGuest() {
 
   return (
     <section
-      className="relative flex min-h-[88svh] items-center justify-center overflow-hidden sm:min-h-screen"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden"
       aria-label="Thank you note"
     >
-      {/* Full-frame background image without heavy mobile zoom */}
+      {/* Full-frame background image with subtle slow zoom */}
       <motion.div
         className="pointer-events-none absolute inset-0"
         initial={{ scale: 1 }}
-        whileInView={{ scale: reduced ? 1 : 1.03 }}
+        whileInView={{ scale: reduced ? 1 : 1.04 }}
         viewport={{ once: true }}
-        transition={{ duration: reduced ? 1 : 16, ease: 'easeOut' }}
+        transition={{ duration: reduced ? 1 : 18, ease: 'easeOut' }}
       >
         <img
           src={BG_IMAGE}
@@ -31,20 +31,25 @@ export function DearGuest() {
         />
       </motion.div>
 
-      {/* Warm dark overlay + bokeh glow */}
-      <div className="absolute inset-0 bg-royal-darkest/70" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,175,55,0.14),transparent_65%)]" />
+      {/* Rich cinematic overlays & bokeh glow */}
+      <div className="absolute inset-0 bg-royal-darkest/65" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-royal-darkest/40 via-transparent to-royal-darkest/90" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(212,175,55,0.16),transparent_65%)]" />
       <div className="film-grain" />
 
-      <div className="relative z-10 mx-auto w-full max-w-md px-5 py-20 text-center sm:px-6 sm:py-28">
+      {/* Top spacer for balanced vertical centering */}
+      <div className="hidden sm:block sm:h-8" />
+
+      {/* ================= MAIN THANK YOU CARD ================= */}
+      <div className="relative z-10 mx-auto my-auto w-full max-w-md px-5 pt-16 pb-10 text-center sm:px-6 sm:py-16">
         <Reveal>
-          <div className="rounded-[28px] border border-gold-soft/45 bg-royal-darkest/60 p-2 shadow-2xl backdrop-blur-md">
-            <div className="rounded-[22px] border border-gold-soft/30 px-6 py-10 sm:px-8 sm:py-12">
-              <div className="mb-3 flex justify-center text-sm text-gold-soft">
+          <div className="rounded-[30px] border border-gold-soft/45 bg-royal-darkest/60 p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8),0_0_40px_-12px_rgba(212,175,55,0.22)] backdrop-blur-md">
+            <div className="rounded-[23px] border border-gold-soft/30 px-6 py-10 sm:px-9 sm:py-12">
+              <div className="mb-3 flex justify-center text-sm text-gold-soft drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]">
                 ♥
               </div>
 
-              <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-cream/85">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-cream/85">
                 With Grateful Hearts
               </p>
 
@@ -52,13 +57,13 @@ export function DearGuest() {
                 Thank You
               </h2>
 
-              <div className="mx-auto my-6 flex max-w-[140px] items-center justify-center gap-2.5">
-                <span className="h-[1px] flex-1 bg-gold-soft/45" />
+              <div className="mx-auto my-6 flex max-w-[150px] items-center justify-center gap-2.5">
+                <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold-soft/60" />
                 <span className="h-1.5 w-1.5 rotate-45 bg-gold-soft" />
-                <span className="h-[1px] flex-1 bg-gold-soft/45" />
+                <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold-soft/60" />
               </div>
 
-              <p className="font-body text-sm italic leading-[1.85] text-cream/90 sm:text-[15px]">
+              <p className="font-body text-sm italic leading-[1.9] text-cream/90 sm:text-[15px]">
                 Your presence and blessings will make
                 <br />
                 our celebration complete. We would be
@@ -70,16 +75,16 @@ export function DearGuest() {
 
               <p className="mt-8 font-display text-base font-medium tracking-wide text-cream sm:text-lg">
                 With love,{' '}
-                <span className="font-script text-2xl text-gold-soft">
+                <span className="font-script text-2xl text-gold-soft sm:text-3xl">
                   {weddingConfig.bride.scriptName}
                 </span>{' '}
                 &amp;{' '}
-                <span className="font-script text-2xl text-gold-soft">
+                <span className="font-script text-2xl text-gold-soft sm:text-3xl">
                   {weddingConfig.groom.scriptName}
                 </span>
               </p>
 
-              <div className="mt-7 inline-block rounded-full border border-cream/30 bg-white/5 px-5 py-2">
+              <div className="mt-7 inline-block rounded-full border border-gold-soft/30 bg-white/[0.04] px-5 py-2">
                 <p className="font-body text-xs italic tracking-wide text-cream/85">
                   Our families look forward to welcoming you
                 </p>
@@ -89,41 +94,50 @@ export function DearGuest() {
         </Reveal>
       </div>
 
-      {/* ================= WEBSITE CREDIT FOOTER ================= */}
-      <div className="absolute bottom-3 left-0 right-0 z-20 px-4 text-center sm:bottom-5">
-        <div className="mx-auto inline-flex flex-col items-center rounded-2xl border border-gold-soft/25 bg-royal-darkest/55 px-5 py-3 shadow-lg backdrop-blur-sm sm:px-7 sm:py-3.5">
+      {/* ================= LUXURY WEBSITE CREDIT FOOTER ================= */}
+      <footer className="relative z-20 w-full border-t border-gold-soft/20 bg-royal-darkest/75 px-4 py-5 backdrop-blur-md sm:py-6">
+        <div className="mx-auto flex max-w-lg flex-col items-center text-center">
+          {/* Decorative top hairline accent */}
+          <div className="mb-2.5 flex items-center gap-2">
+            <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-gold-soft/50" />
+            <span className="text-[8px] text-gold-soft/80">✦</span>
+            <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-gold-soft/50" />
+          </div>
 
-          <p className="font-body text-[9px] font-medium uppercase tracking-[0.25em] text-cream/65 sm:text-[10px]">
-            Website Crafted By
+          <p className="font-body text-[9px] font-medium uppercase tracking-[0.3em] text-cream/60 sm:text-[10px]">
+            Digital Invitation Crafted By
           </p>
 
-          <p className="mt-1 font-display text-sm font-semibold tracking-[0.12em] text-gold-soft sm:text-base">
+          <a
+            href="https://rcmverse.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 font-display text-sm font-semibold tracking-[0.18em] text-gold-soft transition-all duration-300 hover:tracking-[0.21em] hover:text-cream sm:text-base"
+          >
             RCM DIGITAL SOLUTIONS
-          </p>
+          </a>
 
-          <div className="mt-1.5 flex items-center gap-2 text-[10px] text-cream/65 sm:text-[11px]">
+          <div className="mt-2.5 flex flex-wrap items-center justify-center gap-2.5 text-[11px] text-cream/75 sm:gap-3 sm:text-xs">
             <a
               href="https://rcmverse.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-gold-soft"
+              className="inline-flex items-center gap-1.5 rounded-full border border-gold-soft/25 bg-white/[0.03] px-3 py-1 transition-all hover:border-gold-soft/60 hover:bg-gold-soft/10 hover:text-gold-soft"
             >
-              rcmverse.netlify.app
+              <span className="text-[10px] text-gold-soft">🌐</span>
+              <span>rcmverse.netlify.app</span>
             </a>
-
-            <span className="text-gold-soft/60">•</span>
 
             <a
               href="tel:+918500708626"
-              className="transition-colors hover:text-gold-soft"
+              className="inline-flex items-center gap-1.5 rounded-full border border-gold-soft/25 bg-white/[0.03] px-3 py-1 transition-all hover:border-gold-soft/60 hover:bg-gold-soft/10 hover:text-gold-soft"
             >
-              +91 85007 08626
+              <span className="text-[10px] text-gold-soft">📞</span>
+              <span>+91 85007 08626</span>
             </a>
           </div>
-
         </div>
-      </div>
-      {/* ======================================================= */}
+      </footer>
     </section>
   );
 }
