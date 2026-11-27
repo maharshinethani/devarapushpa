@@ -8,7 +8,7 @@ import { Reveal } from '@/components/motion/Reveal';
 /* ------------------------------------------------------------------ */
 
 const GOOGLE_MAPS_URL =
-  'https://maps.app.goo.gl/pE4UJMUgE8hfeB9t6?g_st=aw';
+  'https://maps.app.goo.gl/t1pfdhtY3iixH1iq8?g_st=ac';
 
 /* ------------------------------------------------------------------ */
 /* Calendar                                                            */
