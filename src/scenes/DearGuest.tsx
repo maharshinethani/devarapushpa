@@ -75,12 +75,12 @@ export function DearGuest() {
 
               <p className="mt-8 font-display text-base font-medium tracking-wide text-cream sm:text-lg">
                 With love,{' '}
-                <span className="font-script text-2xl text-gold-soft sm:text-3xl">
-                  {weddingConfig.bride.scriptName}
+              <span className="font-script text-2xl text-gold-soft sm:text-3xl">
+                  {weddingConfig.groom.scriptName}
                 </span>{' '}
                 &amp;{' '}
-                <span className="font-script text-2xl text-gold-soft sm:text-3xl">
-                  {weddingConfig.groom.scriptName}
+                 <span className="font-script text-2xl text-gold-soft sm:text-3xl">
+                  {weddingConfig.bride.scriptName}
                 </span>
               </p>
 
