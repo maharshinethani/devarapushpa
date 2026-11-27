@@ -370,7 +370,7 @@ export function VenueSection() {
               With love &amp; blessings from family &amp; friends
             </p>
             <p className="mt-2 font-serif text-[28px] italic text-[#14533E] sm:text-[32px]">
-              Pushpa &amp; Srikanth
+              Srikanth &amp; Pushpa
             </p>
           </div>
         </Reveal>
